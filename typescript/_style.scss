@@ -1,0 +1,34 @@
+$mainColor: #D90429;
+
+@mixin overlay($bgColor: #C4C4C4DB, $height: 100vh, $width: 100vw) {
+    height: $height;
+    width: $width;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin dialog($bgColor: #fff, $minWidth: 30%, $minHeight: 500px) {
+    border-radius: 10px;
+    background-color: $bgColor;
+    min-width: $minWidth;
+    min-height: $minHeight;
+}
+
+@mixin mainColor {
+    background-color: $mainColor;
+    color: #fff;
+}
+
+@mixin mainColorOnText {
+    color: $mainColor;
+}
+
+@mixin overflow-control {
+    &:hover {
+        overflow: auto;
+        scrollbar-width: thin;
+    }
+}

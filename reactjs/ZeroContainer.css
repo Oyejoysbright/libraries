@@ -1,0 +1,17 @@
+.zero-container-main {
+    height: 100%;
+    text-align: center;
+}
+.zero-container-main.useContainer {
+    height: 100%;
+    text-align: center;
+    line-height: 200px;
+}
+h1.zero-container-main {
+    color: #dfdfdf;
+    font-style: oblique;
+}
+h1.zero-container-main.use-container {
+    border: 1px solid;
+    min-height: 200px;
+}

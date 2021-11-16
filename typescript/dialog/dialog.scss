@@ -1,0 +1,88 @@
+$borderColor: #8D99AE61;
+
+@mixin overlay($bgColor: #C4C4C4DB, $height: 100%, $width: 100%) {
+    position: fixed;
+    height: $height;
+    width: $width;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgColor;
+    z-index: 10;
+}
+@mixin hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: ease-out .3s;    
+}
+@mixin show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+div.modal, div.overlay {
+    @include overlay;
+    @include hide;
+}
+div.modal.show {
+    @include show;
+}
+
+div.dialog-alert {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+    min-width: 30%;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    .dialog-title {
+        height: 50px;
+        padding: 10px;
+        border-bottom: solid 1px $borderColor;
+        vertical-align: middle;
+        box-sizing: border-box;
+    }
+    .dialog-content {
+        padding: 10px;
+        min-height: 100px;
+        box-sizing: border-box;
+    }
+    .dialog-buttons {
+        box-sizing: border-box;
+        padding: 7px 10px;
+        border-top: solid 1px $borderColor;
+        text-align: right;
+        
+        .dialog-button {
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            margin: 0px 5px;
+            height: unset;
+
+            &:hover {
+                opacity: .95;
+            }
+        }
+        .dialog-button.optional-button {
+            background: linear-gradient(180deg, #A3A2A2 0%, #A3A2A2 100%);
+        }
+        .dialog-button.main-button {
+            background: linear-gradient(180deg, rgba(217, 4, 41, 0.68) 0%, #D90429 100%);
+        }
+    }
+
+    .c-right {
+        text-align: right;
+    }
+}
+
+div.overlay.show {
+    @include show;
+}

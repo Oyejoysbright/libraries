@@ -1,0 +1,43 @@
+@use "../style";
+
+$bgColor: style.$mainColor;
+.pagination-wrapper {
+    height: 100px;
+    div.pagination {
+        display: flex;
+        align-items: center;
+        
+        div {
+            display: inline-block;
+            margin: 0px 5px;
+            input {
+                width: 20px;
+            }
+            span {
+                background-color: whitesmoke;
+                border-radius: 5px;
+            }
+        }
+        span {
+            padding: 5px 10px;
+            margin: 0px 2px;
+            cursor: pointer;
+    
+            &.active {
+                color: $bgColor;
+            }
+            &:hover {
+                color: style.$mainColor;
+            }
+            &.disabled {
+                pointer-events: none;
+                opacity: .8;
+            }
+        }
+        
+        input+span:hover {
+            background-color: $bgColor;
+            color: white;
+        }
+    }
+}

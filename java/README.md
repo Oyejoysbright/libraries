@@ -1,4 +1,4 @@
-# JAVASCRIPT
+# JAVA
 This can be used in pure javascript and reactJs.
 The Jpc.java file needs you to install the below specified dependencies in your workspace.
 
